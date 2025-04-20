@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.logging.lifecycleln
+
 /*
  * Copyright (C) 2023 The Android Open Source Project
  *
@@ -14,11 +16,14 @@
  * limitations under the License.
  */
 
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
 }
+
+val lifecycle_version = "2.8.7"
 
 android {
     namespace = "com.example.dessertclicker"
@@ -73,6 +78,7 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.core:core-ktx:1.15.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
 
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     debugImplementation("androidx.compose.ui:ui-tooling")
